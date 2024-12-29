@@ -1,6 +1,6 @@
-[build]
-  base = "build"
-  publish = "build"
+[dist]
+  base = "dist"
+  publish = "dist"
   functions = "netlify/functions"  # Asegúrate de que apunte a la carpeta de funciones
 
 [dev]
