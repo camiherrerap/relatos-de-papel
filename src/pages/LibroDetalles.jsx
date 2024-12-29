@@ -11,7 +11,7 @@ const LibroDetalles = () => {
 
     useEffect(() => {
         const fetchBookDetails = async () => {
-            const response = await fetch(`.netlify/functions/api?id=${id}`);
+            const response = await fetch(`/.netlify/functions/api?id=${id}`);
             const data = await response.json();
             setBook(data);
         };
