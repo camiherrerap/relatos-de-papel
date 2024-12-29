@@ -25,7 +25,7 @@ exports.handler = async function (event, context) {
     }
 
     // Filtrar al usuario por ID
-    const book = books.find((book) => user.id === parseInt(id));
+    const book = books.find((book) => book.id === parseInt(id));
 
     // Si el usuario no existe, devolver un mensaje de error
     if (!book) {
