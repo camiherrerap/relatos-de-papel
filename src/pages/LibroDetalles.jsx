@@ -11,7 +11,7 @@ const LibroDetalles = () => {
 
     useEffect(() => {
         const fetchBookDetails = async () => {
-            const response = await fetch(`http://localhost:3001/books/${id}`);
+            const response = await fetch(`https://relatosdepapelunir.netlify.app/.netlify/functions/books/${id}`);
             const data = await response.json();
             setBook(data);
         };

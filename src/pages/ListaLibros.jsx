@@ -8,7 +8,7 @@ const ListaLibros = () => {
 
     useEffect(() => {
         const fetchBooks = async () => {
-            const response = await fetch("http://localhost:3001/books");
+            const response = await fetch("https://relatosdepapelunir.netlify.app/.netlify/functions/books");
             const data = await response.json();
             setBooks(data);
         };
