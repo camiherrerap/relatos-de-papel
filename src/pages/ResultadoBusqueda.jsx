@@ -14,7 +14,7 @@ const SearchResultsPage = () => {
 
     useEffect(() => {
         // Cargar todos los datos desde el endpoint general
-        fetch("http://localhost:3001/books") // Reemplaza con tu endpoint
+        fetch(".netlify/functions/api") // Reemplaza con tu endpoint
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Error al obtener datos");
