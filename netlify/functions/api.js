@@ -1,5 +1,5 @@
-exports.handler = async function(event, context) {
-    // Puedes procesar los parámetros de la API si lo necesitas
+exports.handler = async function (event, context) {
+    // Base de datos simulada
     const books = [
         { id: 101, portada:"/portada-libros/Barbie-Celebracion.jpg", title: "Barbie Celebracion De Un Icono", sku: "4144112", autor: "",  precio: 189000, editorial: "Rba", formato: "Libro Impreso", edicion: "1", categorias: "No Ficción, Arte", idioma: "Español", numero_pag:"237", cantidad: 1 ,descripcion: "Barbie es Moda. Barbie es Arte. Barbie es el símbolo de la mujer emancipada de todas las culturas y países, cada vez más inclusiva y atenta a cuestiones sociales y globales, en consonancia con su lema: «Sé lo que quieras ser», que resuena cada vez más actual. Nacida en 1959, hace 65 años, pero siempre joven y moderna gracias a sus múltiples cambios de estilo y de fisonomía, Barbie es una criatura caleidoscópica y un verdadero icono pop: creadora de tendencias, top model y musa inspiradora de innumerables artistas."},
         { "id": 1, "portada":"/portada-libros/Efectos-Personales.jpg", "title": "Efectos Personales De Eso Se Trata", "sku": "414411", "autor": "Juan Villoro",  "precio": 129000, "editorial": "Anagrama", "formato": "Libro Impreso", "edicion": "1", "categorias": "Literatura y Ficción, Literatura Latinoamericana", "idioma": "Español", "numero_pag":"494", "cantidad": 1 ,"descripcion": "Juan Villoro es reconocido como uno de los grandes escritores latinoamericanos actuales. Periodista, novelista, cuentista, ensayista y cronista, reunió por primera vez sus ensayos literarios en Efectos personales (Premio Mazatlán 2001), al que siguió De eso se trata (2004), títulos que hoy reunimos en este volumen. Como también lo hiciera en la posterior La utilidad del deseo (2017), Villoro convierte aquí sus lecturas en relatos de la inteligencia. Ambas obras muestran a un narrador sumido en la aventura de leer; las anécdotas se suceden como en una novela y los comentarios surgen con el ingenio de una feliz tertulia. Por estas páginas transitan una excepcional galería de personajes: Goethe atrapado en la geometría del amor; Cervantes, fundador de la road novel; Rousseau, que une su destino a la arriesgada noción de autor; Lowry en el intoxicado paraíso de Cuernavaca."},
@@ -11,10 +11,33 @@ exports.handler = async function(event, context) {
         { "id": 7, "portada":"/portada-libros/Recupera-Tu-Mente.jpg", "title": "Recupera Tu Mente Reconquista Tu Vida", "sku": "409415", "autor": "Marian Rojas Estape",  "precio": 65000, "editorial": "Espasa", "formato": "Libro Impreso", "edicion": "1", "categorias": "No Ficción, Autoayuda y Superación", "idioma": "Español", "numero_pag":"382", "cantidad": 1 ,"descripcion": "En un mundo donde la prisa y la ansiedad parecen dominar cada momento, este libro es tu guía hacia la serenidad y el autodescubrimiento. Sumérgete en las páginas de una obra que combina ciencia y sabiduría práctica para ayudarte a liberarte de las cadenas de la distracción y el estrés. Marian Rojas Estapé, con su enfoque divulgativo y científico, te invita a explorar los males modernos que fragmentan nuestra atención y diluyen nuestra felicidad. Desde la impaciencia hasta la intolerancia al aburrimiento, descubre cómo nuestra era de gratificación instantánea está remodelando nuestras mentes. Este libro no solo diagnostica los problemas, sino que también ofrece soluciones concretas y prácticas para retomar el control de tu mente y, por ende, de tu vida. ¡Actúa ahora y dale un respiro a tu mente! Compra \"Recupera tu mente, reconquista tu vida\" y comienza el camino hacia un bienestar duradero."},
         { "id": 8, "portada":"/portada-libros/El-Libro-De-Otro-Lugar.jpg", "title": "El Libro De Otro Lugar", "sku": "416458", "autor": "Keanu Reeves",  "precio": 98000, "editorial": "Oceano", "formato": "Libro Impreso", "edicion": "1", "categorias": "Literatura y Ficción, Fantástica y Ciencia Ficción", "idioma": "Español", "numero_pag":"428", "cantidad": 1 ,"descripcion": "Necesitábamos una herramienta -dijo ella-. Así que se la pedí a los dioses\". Siempre ha habido rumores, leyendas, el guerrero que no puede ser asesinado, que ha visto mil civilizaciones levantarse y caer, el guerrero de incontables nombres: Unute, el Hijo del Rayo, la Muerte misma… A quien en estos días se le conoce simplemente como \"B\". Y él sólo anhela ser capaz de morir. Un grupo de operaciones encubiertas del ejército estadounidense le promete conseguir su destino de muerte, todo lo que tiene que hacer a cambio es ayudarles. Pero cuando un soldado vuelve a la vida, el suceso imposible acaba apuntando hacia una fuerza aún más recóndita y, al menos igual de poderosa, que la del propio B. Una fuerza que persigue sus propios objetivos."},
         { "id": 9, "portada":"/portada-libros/Cuentos-De-Navidad-Clasicos.jpg", "title": "Cuentos De Navidad Clasicos", "sku": "416492", "autor": "Estefania Zorita",  "precio": 91000, "editorial": "Alma", "formato": "Libro Impreso", "edicion": "1", "categorias": "Literatura y Ficción, Literatura Universal", "idioma": "Español", "numero_pag":"268", "cantidad": 1 ,"descripcion": "Si hay una época que ha inspirado a autores occidentales de todos los tiempos, esa es la Navidad. Historias entrañables, pero también melancólicas y humorísticas, todas tienen cabida en esta antología que abarca relatos del siglo XIX y principios del siglo XX de cuentistas reconocidos, como Charles Dickens o Antón Chéjov, o aún por descubrir, como O. Henry o Nikolái Gógol. Una sublime recopilación de cuentos clásicos imprescindibles con los que emocionarse."}
-    ]
+    ];
 
+    // Obtener el id desde los parámetros de la consulta
+    const { id } = event.queryStringParameters;
+
+    // Verificar si el id está presente
+    if (!id) {
+        return {
+            statusCode: 200,
+            body: JSON.stringify(books), // Devolver todos los usuarios si no hay id
+        };
+    }
+
+    // Filtrar al usuario por ID
+    const book = books.find((book) => user.id === parseInt(id));
+
+    // Si el usuario no existe, devolver un mensaje de error
+    if (!book) {
+        return {
+            statusCode: 404,
+            body: JSON.stringify({ message: "Usuario no encontrado" }),
+        };
+    }
+
+    // Si se encuentra el usuario, devolverlo
     return {
         statusCode: 200,
-        body: JSON.stringify(books),
+        body: JSON.stringify(book),
     };
 };
