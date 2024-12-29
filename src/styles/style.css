@@ -1,0 +1,169 @@
+.clasificado{
+    margin-top: 29px;
+    margin-bottom: -53px;
+}
+
+.logo__image{
+    width: 170px;
+}
+
+.buscador--header{
+    margin: 20% 0;
+}
+
+.catalog--des{
+    display: contents;
+    list-style-type: none;
+}
+
+.libro--catalog{
+    text-align: center;
+    margin: 53px;
+    padding: 35px;
+}
+
+.libro--catalog a{
+    text-decoration: none;
+}
+
+.libro__imagen{
+    display: inline-block;
+    width: 170px;
+}
+
+.libro__titulo{
+    font-weight: 600;
+    font-size: 18px;
+    color: #121a2f;
+    font-family: Mulish, sans-serif;
+    margin: 10px 10px;
+    height: 71px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.libro__autor{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #121a2f;
+    opacity: .5;
+    margin: 0;
+    height: 50px;
+}
+
+.libro__precio{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #3f3f40;
+    margin-bottom: 16px;
+}
+
+.cardBook{
+    border: none;
+    margin: 37px;
+    text-align: left;
+}
+
+
+.card__autor h3{
+    color: #121a2f;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+.cardBook--imagen{
+    text-align: center;
+}
+
+.card--editorial{
+    margin: 43px 0;
+}
+
+.editor__titulo{
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: .12px;
+    color: #121a2f;
+}
+
+.editor__info{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #020a1f;
+    margin-top: .2rem;
+}
+
+.card__precio{
+    color: #020a1f;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.card__sku{
+    color: #727273;
+    margin-top: 69px;
+}
+
+.card__info{
+    margin: 44px 0;
+}
+
+.detalle__libro {
+    display: inline-block;
+    margin: 32px;
+}
+
+span.detalle__titulo {
+    display: flex;
+    font-weight: bold;
+}
+
+.pag_titulo{
+    margin-top: 50px;
+}
+
+.landing{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.landig__nota{
+    font-style: italic;
+    font-size: 12px;
+    text-align: right;
+}
+
+.comprar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito__titulo{
+    font-weight: 600;
+    font-size: 18px;
+    color: #121a2f;
+    font-family: Mulish, sans-serif;
+    margin: 10px 10px;
+    height: 71px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
