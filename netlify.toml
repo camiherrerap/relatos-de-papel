@@ -1,0 +1,8 @@
+[build]
+  base = "build"
+  publish = "build"
+  functions = "netlify/functions"  # Asegúrate de que apunte a la carpeta de funciones
+
+[dev]
+  functions = "netlify/functions"  # También configura el entorno de desarrollo
+
